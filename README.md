@@ -25,7 +25,7 @@ Performance comparison between SSDVFF and Taxonomy implementations
 
 ```json5
 [{ 
-    "_id" : 606fc56504fc40425d1b225d, 
+    "_id" : "606fc56504fc40425d1b225d", 
     "geometry" : {
         "type" : "Point", 
         "coordinates" : [
@@ -154,7 +154,7 @@ Performance comparison between SSDVFF and Taxonomy implementations
 </p>
 </details>
 
-### Execution
+### Build and run
 ```bash
 maven clean install
 java -XX:StartFlightRecording=dumponexit=true -jar target/lucene-facets-benchmark-1.0.0-jar-with-dependencies.jar /home/user/config.json
