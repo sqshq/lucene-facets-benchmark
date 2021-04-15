@@ -13,7 +13,7 @@ Performance comparison between SSDVFF and Taxonomy implementations
   "enableMergeScheduler": true,
   "allFieldsMultivalue": false,
   "commitBuffer": 100000,
-  "querySampleSize": 20,
+  "querySampleSize": 10000,
   "queryPageSize": 20,
   "resourceFilePath": "/tmp/data/resource.json",
   "indexPath": "/tmp/data/lucene"
