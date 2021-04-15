@@ -25,7 +25,7 @@ Performance comparison between SSDVFF and Taxonomy implementations
 
 ```json5
 [{ 
-    "_id" : ObjectId("606fc56504fc40425d1b225d"), 
+    "_id" : 606fc56504fc40425d1b225d, 
     "geometry" : {
         "type" : "Point", 
         "coordinates" : [
@@ -36,19 +36,19 @@ Performance comparison between SSDVFF and Taxonomy implementations
     "data" : {
         "updated_date" : "2020-06-19", 
         "city" : "Florence", 
-        "calculated_host_listings_count" : NumberInt(1), 
+        "calculated_host_listings_count" : 1, 
         "reviews_per_month" : 2.42, 
-        "minimum_nights" : NumberInt(2), 
-        "number_of_reviews" : NumberInt(132), 
+        "minimum_nights" : 2, 
+        "number_of_reviews" : 132, 
         "last_review" : "2020-01-29", 
-        "host_id" : NumberInt(42112573), 
-        "availability_365" : NumberInt(270), 
+        "host_id" : 42112573, 
+        "availability_365" : 270, 
         "room_type" : "Entire home/apt", 
         "neighbourhood" : "Centro Storico", 
         "name" : "ELEGANT FLAT FLORENCE CITY CENTER", 
         "country" : "Italy", 
         "location" : "Italy, Florence, Centro Storico", 
-        "price" : NumberInt(120), 
+        "price" : 120, 
         "house_rules" : [
             "No smoking", 
             "No pets", 
@@ -121,7 +121,7 @@ Performance comparison between SSDVFF and Taxonomy implementations
         "listing_type" : "bed and breakfast", 
         "host_type" : "hotel", 
         "booking_requirements" : "prepayment", 
-        "host_language" : "russian", 
+        "host_language" : "english", 
         "location_tags" : [
             "beach", 
             "woods", 
@@ -140,9 +140,9 @@ Performance comparison between SSDVFF and Taxonomy implementations
             "provincial", 
             "tree house"
         ], 
-        "beds_count" : NumberInt(6), 
-        "bathrooms_count" : NumberInt(2), 
-        "bedrooms_count" : NumberInt(1), 
+        "beds_count" : 6, 
+        "bathrooms_count" : 2, 
+        "bedrooms_count" : 1, 
         "legal" : {
             "ownership_type" : "Community property", 
             "mortgage_property" : true
