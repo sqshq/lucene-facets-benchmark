@@ -12,6 +12,8 @@ data class BenchmarkConfig(
     val allFieldsMultivalue: Boolean,
     val commitBuffer: Int,
     val querySampleSize: Int,
+    val mandatoryQueryDimensions: Set<String>,
+    val queryTypes: Set<QueryType>,
     val queryPageSize: Int,
     val resourceFilePath: String,
     val indexPath: String
@@ -23,6 +25,10 @@ enum class Mode {
 
 enum class IndexType {
     TAXONOMY, SSDVFF
+}
+
+enum class QueryType {
+    DRILLDOWN, DRILLSIDEWAYS, MATCHALL
 }
 
 fun FacetsConfig.forBenchmark(benchmarkConfig: BenchmarkConfig, sample: Document): FacetsConfig {

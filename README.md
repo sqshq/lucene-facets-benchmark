@@ -6,17 +6,20 @@ Performance comparison between SSDVFF and Taxonomy implementations
 
 ```json5
 {
-  "mode": "INDEX",
+  "mode": "QUERY",
   "indexType": "SSDVFF",
-  "cycles": 5,
-  "concurrency": 10,
+  "cycles": 1,
+  "concurrency": 4,
   "enableMergeScheduler": true,
   "allFieldsMultivalue": false,
   "commitBuffer": 100000,
-  "querySampleSize": 10000,
-  "queryPageSize": 20,
+  "querySampleSize": 50,
+  "queryPageSize": 10,
+  "mandatoryQueryDimensions": ["country"],
+  "queryTypes": ["DRILLDOWN", "DRILLSIDEWAYS"],
   "resourceFilePath": "/tmp/data/resource.json",
-  "indexPath": "/tmp/data/lucene"
+  "indexPath": "/tmp/data/lucene",
+  "metricsReportIntervalSec": 20
 }
 ```
 
