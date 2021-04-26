@@ -54,9 +54,9 @@ class TaxonomyIndexWriter(
         val luceneDocument = Converter.convertToTaxonomy(document, FieldType.TAXONOMY)
         indexWriter.addDocument(facetsConfig.build(facetWriter, luceneDocument))
 
-        if (bufferCount.incrementAndGet() >= benchmarkConfig.commitBuffer) {
-            commit()
+        if (bufferCount.incrementAndGet() == benchmarkConfig.commitBuffer) {
             bufferCount.set(0)
+            commit()
         }
     }
 

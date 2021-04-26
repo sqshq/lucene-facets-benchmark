@@ -45,9 +45,9 @@ class SortedSetIndexWriter(
         val luceneDocument = Converter.convertToTaxonomy(document, FieldType.SSDVFF)
         indexWriter.addDocument(facetsConfig.build(luceneDocument))
 
-        if (bufferCount.incrementAndGet() >= benchmarkConfig.commitBuffer) {
-            commit()
+        if (bufferCount.incrementAndGet() == benchmarkConfig.commitBuffer) {
             bufferCount.set(0)
+            commit()
         }
     }
 
