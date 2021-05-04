@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>lucene-facets-benchmark</artifactId>
+    <artifactId>lucene-facets-merger</artifactId>
     <groupId>com.sqshq</groupId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>lucene-facets-benchmark</name>
@@ -61,6 +61,11 @@
             <artifactId>metrics-core</artifactId>
             <version>3.1.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -80,7 +85,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.sqshq.facets.BenchmarkKt</mainClass>
+                                    <mainClass>com.sqshq.facets.MergerKt</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
@@ -116,7 +121,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
                 <configuration>
-                    <mainClass>com.sqshq.facets.BenchmarkKt</mainClass>
+                    <mainClass>com.sqshq.facets.MergerKt</mainClass>
                 </configuration>
             </plugin>
         </plugins>
