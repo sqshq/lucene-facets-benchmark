@@ -10,6 +10,7 @@ import org.apache.lucene.index.IndexWriter
 import org.apache.lucene.index.IndexWriterConfig
 import org.apache.lucene.store.Directory
 import org.apache.lucene.store.FSDirectory
+import org.apache.lucene.store.HardlinkCopyDirectoryWrapper
 import java.nio.file.Path
 
 class TaxonomyIndexMerger(private val mergerConfig: MergerConfig) : Merger {
@@ -29,9 +30,9 @@ class TaxonomyIndexMerger(private val mergerConfig: MergerConfig) : Merger {
             .setRAMBufferSizeMB(16.0)
             .setCommitOnClose(true)
 
-        this.targetMainDirectory = FSDirectory.open(Path.of(mergerConfig.targetIndexPath))
+        this.targetMainDirectory = HardlinkCopyDirectoryWrapper(FSDirectory.open(Path.of(mergerConfig.targetIndexPath)))
         this.targetFacetDirectory =
-            FSDirectory.open(Path.of(mergerConfig.targetIndexPath).resolve("facets"))
+            HardlinkCopyDirectoryWrapper(FSDirectory.open(Path.of(mergerConfig.targetIndexPath).resolve("facets")))
 
         this.targetMainWriter = IndexWriter(targetMainDirectory, writerConfig)
         this.targetFacetWriter = DirectoryTaxonomyWriter(

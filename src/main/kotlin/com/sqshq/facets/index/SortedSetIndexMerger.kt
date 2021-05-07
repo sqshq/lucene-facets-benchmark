@@ -5,6 +5,7 @@ import org.apache.lucene.index.IndexWriter
 import org.apache.lucene.index.IndexWriterConfig
 import org.apache.lucene.store.Directory
 import org.apache.lucene.store.FSDirectory
+import org.apache.lucene.store.HardlinkCopyDirectoryWrapper
 import java.nio.file.Path
 
 class SortedSetIndexMerger(mergerConfig: MergerConfig) : Merger {
@@ -18,7 +19,8 @@ class SortedSetIndexMerger(mergerConfig: MergerConfig) : Merger {
             .setRAMBufferSizeMB(16.0)
             .setCommitOnClose(true)
 
-        this.targetWriter = IndexWriter(FSDirectory.open(Path.of(mergerConfig.targetIndexPath)), writerConfig)
+        val dir = HardlinkCopyDirectoryWrapper(FSDirectory.open(Path.of(mergerConfig.targetIndexPath)))
+        this.targetWriter = IndexWriter(dir, writerConfig)
         this.sourceDirectory = FSDirectory.open(Path.of(mergerConfig.sourceIndexPath))
     }
 
